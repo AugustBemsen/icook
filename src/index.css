@@ -1,21 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: rgba(254, 213, 151, 0.12);
-  color: rgba(0, 0, 0, 0.5)
-}
-
-.Flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10rem;
-}
-
-.Heading {
-  text-align: center;
-  font-size: 3rem;
+  font-size: min(max(14px, 4vw), 16px);
+  background: rgba(254, 213, 151, 0.02);
+  color: rgba(0, 0, 0, 0.5);
 }

@@ -4,7 +4,9 @@
     justify-content: space-between;
     width: 90%;
     padding-left: 1rem;
-    padding-top: 1rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 0;
 }
 
 .navLinks {
