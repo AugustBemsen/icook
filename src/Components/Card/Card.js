@@ -10,8 +10,10 @@ const Card = (props) => {
           src="https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg"
           alt="Rice"
         />
-        <h4 className="CardTitle">Rice</h4>
-        <p className="CardDes">Learn to Cook rice</p>
+        <div className="CardText">
+          <h4 className="CardTitle">Rice</h4>
+          <p className="CardDes">Learn to Cook rice</p>
+        </div>
       </div>
     </div>
   );
