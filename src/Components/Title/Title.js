@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../App.css";
 import "./Title.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,6 +25,4 @@ export default Title;
 //   const [showFilter, setShowFilter] = useState(true)
 //   const load = () => setShowFilter(false)
 // onClick={load}
-{
-  /* { showFilter ? <FontAwesomeIcon className="navLinks" icon={faFilter} /> : null } */
-}
+// { showFilter ? <FontAwesomeIcon className="navLinks" icon={faFilter} /> : null } 
