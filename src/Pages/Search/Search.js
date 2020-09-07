@@ -4,21 +4,24 @@ import "./Search.css";
 import Title from "../../Components/Title/Title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import Card from "../../Components/Card/Card";
 
 const Search = (props) => {
   return (
-    <div>
+    <div id="Search">
       <Title title="What to eat?" showIcon={true} />
-      <div className="Search">
-        <form>
+      <div className="MainContent">
           <input
             type="text"
             name="search"
-            id="search"
-            placeholder={<FontAwesomeIcon className="navLinks" icon={faFilter} />}
+            id="find"            
+            placeholder="Search"
           />
-          <button type="submit">Cook</button>
-        </form>
+          {/* <button type="submit">Cook</button> */}
+          <div className="container">
+            <Card />
+            <Card />
+          </div>
       </div>
     </div>
   );

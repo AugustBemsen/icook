@@ -5,5 +5,5 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: min(max(14px, 4vw), 16px);
   background: rgba(254, 213, 151, 0.02);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
 }
