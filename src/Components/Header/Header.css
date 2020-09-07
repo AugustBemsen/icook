@@ -1,11 +1,11 @@
 .Header {
     display: flex;
+    background: #fff;
+    padding: 1rem 0 1rem 1rem;
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 

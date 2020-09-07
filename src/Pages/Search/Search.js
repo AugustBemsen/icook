@@ -21,6 +21,8 @@ const Search = (props) => {
           <div className="container">
             <Card />
             <Card />
+            <Card />
+            <Card />
           </div>
       </div>
     </div>
