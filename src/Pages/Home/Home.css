@@ -43,11 +43,13 @@
     margin: 1.8rem auto;
 }
 
-.social, .socialLink {
+.social .socialLink {
+    text-decoration: none;
     font-size: 1rem;
     color: #F9A694;
 }
 
 .iconText {
     padding-left: 1rem;
+    color: #F9A694;
 }

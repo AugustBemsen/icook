@@ -17,7 +17,6 @@ const Search = (props) => {
             id="find"            
             placeholder="Search"
           />
-          {/* <button type="submit">Cook</button> */}
           <div className="container">
             <Card />
             <Card />
