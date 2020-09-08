@@ -11,7 +11,7 @@
 }
 
 .HomeIcon {
-    color: red;
+    color: var(--third-color);
     background: #fff;
     padding: 0.8rem;
     font-size: 1.5rem;

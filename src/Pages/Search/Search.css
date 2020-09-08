@@ -33,8 +33,10 @@ input:focus, textarea:focus {
     margin-bottom: 4.5rem;
 }
 
-
 @media screen and (max-width: 345px) {
+    .MainContent {
+        margin-top: 1.2rem;
+    }
     #find, #find::placeholder {
         padding: 0.6rem;
     }
