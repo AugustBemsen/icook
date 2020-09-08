@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+:root {
+    --link-color: #F9A694;
+}
+
 
 .Top {
- background: url("https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/12/Shakshuka-19.jpg");
- background-position: center;
- background-size: cover;
- background-repeat: no-repeat;
- width: 100%;
- height: 50vh;
- position: relative;
+    background: url("https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/12/Shakshuka-19.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50vh;
+    position: relative;
 }
 
 .HomeIcon {
@@ -20,8 +24,9 @@
     position: absolute;
     top: -32px;
     left: 30px;
-    box-shadow: -1px 6px 6px 0px rgba(4,4,19,0.1);
+    box-shadow: -1px 6px 6px 0px rgba(4, 4, 19, 0.1);
 }
+
 .Bottom {
     position: fixed;
     bottom: 0;
@@ -31,10 +36,12 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
+
 .TextDiv {
     width: 80%;
     margin: 2rem auto;
 }
+
 .Heading {
     font-family: 'Lato', sans-serif;
     font-size: 2.3rem;
@@ -44,14 +51,38 @@
 .social .socialLink {
     text-decoration: none;
     font-size: 1rem;
-    color: #F9A694;
+    color: var(--link-color)
 }
 
 .iconText {
     padding-left: 1rem;
-    color: #F9A694;
+    color: var(--link-color)
 }
 
 .mainText {
     height: calc(-70vh);
+}
+
+@media screen and (max-width: 345px) {
+    .HomeIcon {
+        padding: 0.5rem;
+        font-size: 1rem;
+        top: -15px;
+    }
+
+    .Heading {
+        font-size: 1.5rem;
+        margin: 1.4rem auto;
+    }
+
+    .socialLink {
+        font-size: 0.8rem !important;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+    .TextDiv {
+        margin: 1rem auto;
+    }
 }
