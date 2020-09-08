@@ -25,4 +25,4 @@ export default Title;
 //   const [showFilter, setShowFilter] = useState(true)
 //   const load = () => setShowFilter(false)
 // onClick={load}
-// { showFilter ? <FontAwesomeIcon className="navLinks" icon={faFilter} /> : null } 
+// { showFilter ? <FontAwesomeIcon className="navLinks" icon={faFilter} /> : null }

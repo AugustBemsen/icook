@@ -13,7 +13,24 @@
     --font-size: 1.4rem;
 
     font-size: var(--font-size);
-    color: rgba(0, 0, 0, 0.5)
+    color: var(--text-color);
+}
+
+.navLinks:hover {
+    text-decoration: none !important;
+}
+
+.ActiveHome {
+    color: var(--first-color);
+}
+.ActiveSearch {
+    color: var(--second-color);
+}
+.ActiveFav {
+    color: var(--third-color);
+}
+.ActiveBook {
+    color: var(--fourth-color);
 }
 
 @media screen and (max-width: 345px) {
