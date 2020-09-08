@@ -40,7 +40,7 @@ const Home = () => {
             </div>
             <div className="mainText">
               <p className="appIntro">
-                Are you hungry and dont know what to eat? or probaly dont know
+                Are you hungry and dont know what to eat or dont know
                 how to cook it? iCook gat you covered search for a recipe.
               </p>
             </div>

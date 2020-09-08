@@ -9,18 +9,17 @@
  width: 100%;
  height: 50vh;
  position: relative;
- /* z-index: 1; */
 }
 
 .HomeIcon {
     color: red;
     background: #fff;
-    padding: 1rem;
-    font-size: 2rem;
+    padding: 0.8rem;
+    font-size: 1.5rem;
     border-radius: 50%;
     position: absolute;
-    top: -40px;
-    left: 10px;
+    top: -32px;
+    left: 30px;
     box-shadow: -1px 6px 6px 0px rgba(4,4,19,0.1);
 }
 .Bottom {
@@ -31,7 +30,6 @@
     background: #fff;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    /* z-index: 5; */
 }
 .TextDiv {
     width: 80%;
@@ -39,7 +37,7 @@
 }
 .Heading {
     font-family: 'Lato', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 1.8rem auto;
 }
 
@@ -52,4 +50,8 @@
 .iconText {
     padding-left: 1rem;
     color: #F9A694;
+}
+
+.mainText {
+    height: calc(-70vh);
 }

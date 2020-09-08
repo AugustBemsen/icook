@@ -1,5 +1,5 @@
 .MainContent {
-    width: 90%;
+    width: calc(100% - 1.5rem);
     margin: auto;
     margin-top: 1rem;
 }
@@ -11,7 +11,7 @@ input:focus, textarea:focus {
 
 #find {
     width: 90%;
-    padding: 1rem;
+    padding: 0.95rem;
     margin: auto;
     border: .3px solid black;
     border-radius: 50px;
@@ -29,5 +29,13 @@ input:focus, textarea:focus {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(10rem, 100%)); */
     grid-template-columns: 50% 2fr;
-    margin: auto;
+    margin:  2rem auto;
+    margin-bottom: 4.5rem;
+}
+
+
+@media screen and (max-width: 345px) {
+    #find, #find::placeholder {
+        padding: 0.6rem;
+    }
 }
