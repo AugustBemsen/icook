@@ -1,0 +1,81 @@
+ [
+    {
+        "Image": "./Images/cook.png",
+        "Title": "Rice",
+        "Note": "Learn How to cook Rice",
+        "Id": 1,
+        "color": "#FAA795"
+    },
+
+    {
+        "Image": "./Images/cook1.png",
+        "Title": "Fried Yam",
+        "Note": "Prepare nice fried yam",
+        "Id": 2,
+        "color": "#D2AFDF"
+    },
+
+    {
+        "Image": "./Images/cook2.png",
+        "Title": "Pizza",
+        "Note": "Make your pizza from home",
+        "Id": 3,
+        "color": "#7ED9BE"
+    },
+
+    {
+        "Image": "./Images/cook3.png",
+        "Title": "Burger",
+        "Note": "Recipe for the best burger",
+        "Id": 4,
+        "color": "#FBE397"
+    },
+
+    {
+        "Image": "./Images/cook4.png",
+        "Title": "Meat Pie",
+        "Note": "Bake a pie with beef meat",
+        "Id": 5,
+        "color": "#BBE4FB"
+    },
+
+    {
+        "Image": "./Images/cook5.png",
+        "Title": "Egg Roll",
+        "Note": "Roll that Egg yourself",
+        "Id": 6,
+        "color": "#FAA795"
+    },
+
+    {
+        "Image": "./Images/cook6.png",
+        "Title": "Boiled Maize",
+        "Note": "Easy steps to Enjoyment",
+        "Id": 7,
+        "color": "#D2AFDF"
+    },
+
+    {
+        "Image": "./Images/cook7.png",
+        "Title": "Beans",
+        "Note": "It takes time, but its easy",
+        "Id": 8,
+        "color": "#7ED9BE"
+    },
+
+    {
+        "Image": "./Images/cook8.png",
+        "Title": "Stew",
+        "Note": "Learn How to prepare nice stew",
+        "Id": 9,
+        "color": "#FBE397"
+    },
+
+    {
+        "Image": "./Images/cook9.png",
+        "Title": "Noddles",
+        "Note": "Make the best Noddles",
+        "Id": 10,
+        "color": "#BBE4FB"
+    }
+]

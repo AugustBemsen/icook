@@ -1,6 +1,6 @@
 .Card {
     width: 120px;
-    height: 130px;
+    height: 155px;
     padding: 1.2rem;
     line-height: 0;
     font-size: .8rem;
@@ -10,8 +10,8 @@
 
 
 .RecipeImg {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 70%;
     margin: auto;
     display: block;
@@ -29,8 +29,8 @@
     }
 
     .RecipeImg {
-        width: 80px;
-        height: 80px;
+        width: 85px;
+        height: 85px;
     }
     .CardDes {
         font-size: .65rem;

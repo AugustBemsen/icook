@@ -3,7 +3,13 @@ import "../../App.css";
 import "./Search.css";
 import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
+import { details } from "../../data.js";
 
+// Fetch local Data
+// fetch("../../data.json")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch(err => console.log(err));
 const Search = (props) => {
   return (
     <div id="Search">
@@ -11,16 +17,15 @@ const Search = (props) => {
       <div className="MainContent">
         <input type="text" name="search" id="find" placeholder="Search" />
         <div className="container">
-          <Card color="#FBE397" />
-          <Card color="#BBE4FB"/>
-          <Card color="#FAA795"/>
-          <Card color="#D2AFDF"/>
-          <Card color="#7ED9BE"/>
-          <Card color="#FBE397" />
-          <Card color="#BBE4FB"/>
-          <Card color="#FAA795"/>
-          <Card color="#D2AFDF"/>
-          <Card color="#7ED9BE"/>
+          {details.map((detail) => (
+            <Card
+            Image={detail.Image}
+            Title={detail.Title}
+            Note={detail.Note}
+            Color={detail.Color}
+            key={detail.Id}
+             />
+          ))}
         </div>
       </div>
     </div>
