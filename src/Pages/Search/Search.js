@@ -11,6 +11,8 @@ import { details } from "../../data.js";
 //   .then((data) => console.log(data))
 //   .catch(err => console.log(err));
 const Search = (props) => {
+  const truncate = (str) => str.length > 20 ? str.substring(0, 16) + "..." : str;
+
   return (
     <div id="Search">
       <Title title="What to eat?" showIcon={true} />
@@ -19,12 +21,12 @@ const Search = (props) => {
         <div className="container">
           {details.map((detail) => (
             <Card
-            Image={detail.Image}
-            Title={detail.Title}
-            Note={detail.Note}
-            Color={detail.Color}
-            key={detail.Id}
-             />
+              Image={detail.Image}
+              Title={detail.Title}
+              Note={truncate(detail.Note)}
+              Color={detail.Color}
+              key={detail.Id}
+            />
           ))}
         </div>
       </div>

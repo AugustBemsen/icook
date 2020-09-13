@@ -1,7 +1,7 @@
 export const details = [{
         Image: "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
         Title: "Rice",
-        Note: "Learn How to cook Rice",
+        Note: "How to cook Rice",
         Id: 1,
         Color: "#FAA795"
     },
