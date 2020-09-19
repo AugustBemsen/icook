@@ -31,6 +31,7 @@ const Search = (props) => {
 
   useEffect(() => {
     fetchRecipe();
+    // eslint-disable-next-line
   }, [recipe]);
 
   const fetchRecipe = () => {
@@ -44,12 +45,12 @@ const Search = (props) => {
 
   const wordsHandler = (event) => {
     setWords(event.target.value);
-    console.log(words);
   };
 
   const recipeHandler = (event) => {
     event.preventDefault();
     setRecipe(words);
+    setWords("");
   };
 
   return (
@@ -61,7 +62,7 @@ const Search = (props) => {
         icon={faFilter}
       />
       <div className="MainContent">
-        <form className="MainForm">
+        <form className="MainForm" onSubmit={recipeHandler}>
           <input
             type="text"
             name="search"

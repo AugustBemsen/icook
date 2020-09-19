@@ -22,7 +22,7 @@
 }
 
 .CardTitle {
-    font-size: .66rem;
+    font-size: .75rem;
 }
 
 @media screen and (max-width: 345px) {
@@ -41,5 +41,9 @@
         font-size: .65rem;
         max-width: 100vh;
         margin: 0;
+    }
+
+    .CardTitle {
+        font-size: .6rem;
     }
 }
