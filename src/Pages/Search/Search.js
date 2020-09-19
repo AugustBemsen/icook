@@ -1,31 +1,84 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../App.css";
 import "./Search.css";
 import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
-import { details } from "../../data.js";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
-// Fetch local Data
-// fetch("../../data.json")
-//   .then((res) => res.json())
-//   .then((data) => console.log(data))
-//   .catch(err => console.log(err));
 const Search = (props) => {
-  const truncate = (str) => str.length > 20 ? str.substring(0, 16) + "..." : str;
+  const API_KEY = process.env.REACT_APP_Key;
+  const APP_ID = process.env.REACT_APP_ID;
+  const colors = [
+    "#FAA795",
+    "#D2AFDF",
+    "#7ED9BE",
+    "#FBE397",
+    "#BBE4FB",
+    "#FAA795",
+    "#D2AFDF",
+    "#7ED9BE",
+    "#FBE397",
+    "#BBE4FB",
+  ];
+  // Shorten Words from API
+  const truncate = (str) =>
+    str.length > 20 ? str.substring(0, 16) + "..." : str;
+
+  //  States Managements
+  const [results, setResults] = useState([]);
+  const [words, setWords] = useState("");
+  const [recipe, setRecipe] = useState("");
+
+  useEffect(() => {
+    fetchRecipe();
+  }, [recipe]);
+
+  const fetchRecipe = () => {
+    fetch(
+      `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&app_key=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => setResults(data.hits))
+      .catch((err) => console.log(err));
+  };
+
+  const wordsHandler = (event) => {
+    setWords(event.target.value);
+    console.log(words);
+  };
+
+  const recipeHandler = (event) => {
+    event.preventDefault();
+    setRecipe(words);
+  };
 
   return (
     <div id="Search">
-      <Title title="What to eat?" showIcon={true} />
+      <Title
+        title="What to eat?"
+        showTitle={true}
+        showIcon={true}
+        icon={faFilter}
+      />
       <div className="MainContent">
-        <input type="text" name="search" id="find" placeholder="Search" />
+        <form className="MainForm">
+          <input
+            type="text"
+            name="search"
+            id="find"
+            placeholder="Search"
+            value={words}
+            onChange={wordsHandler}
+          />
+        </form>
         <div className="container">
-          {details.map((detail) => (
+          {results.map((result, index) => (
             <Card
-              Image={detail.Image}
-              Title={detail.Title}
-              Note={truncate(detail.Note)}
-              Color={detail.Color}
-              key={detail.Id}
+              Image={result.recipe.image}
+              Title={truncate(result.recipe.label)}
+              Note={truncate(result.recipe.healthLabels[0])}
+              Color={colors[index]}
+              key={result.recipe.label}
             />
           ))}
         </div>

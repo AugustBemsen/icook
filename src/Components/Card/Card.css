@@ -21,6 +21,10 @@
     text-align: center;
 }
 
+.CardTitle {
+    font-size: .66rem;
+}
+
 @media screen and (max-width: 345px) {
     .Card {
         width: 100px;
@@ -32,6 +36,7 @@
         width: 85px;
         height: 85px;
     }
+
     .CardDes {
         font-size: .65rem;
         max-width: 100vh;
