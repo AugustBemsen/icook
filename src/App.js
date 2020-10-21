@@ -9,17 +9,29 @@ import Search from "./Pages/Search/Search";
 
 const App = () => {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/search" component={Search} />
-          <Route path="/recipe" component={Recipe} />
-          <Route path="/favorites" component={Favorites} />
-        </Switch>
-        <Header />
-      </Router>
-    </div>
+    <>
+      <div className="WebApp">
+        <div className="WebContainer">
+          <div className="WebAppContent">
+            <h1 className="WebAppWarning">
+              Ops! This App cant be viewed on Large Screens, Please use a mobile
+              phone.....
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div className="MobileApp">
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/search" component={Search} />
+            <Route path="/recipe" component={Recipe} />
+            <Route path="/favorites" component={Favorites} />
+          </Switch>
+          <Header />
+        </Router>
+      </div>
+    </>
   );
 };
 
