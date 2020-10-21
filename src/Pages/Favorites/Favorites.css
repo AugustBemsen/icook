@@ -75,3 +75,35 @@
 .OldDiv {
     float: right;
 }
+
+@media screen and (max-width: 345px) {
+
+    .RecentSaved {
+        height: 100px;
+        padding: 1rem;
+    }
+
+    .RecentImg {
+        width: 130px;
+        height: 100px;
+    }
+
+    .RecentDiv {
+        margin-top: 1rem;
+        padding-right: 1.2rem;
+    }
+
+    .OldSaved {
+        height: 70px;
+    }
+
+    .OldImg {
+        width: 130px;
+        height: 75px;
+    }
+
+    .OldDiv {
+        padding-right: 1.2rem;
+    }
+
+}
