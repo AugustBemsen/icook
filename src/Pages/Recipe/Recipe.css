@@ -1,0 +1,46 @@
+.Recipe {
+    margin-bottom: 7rem;
+}
+
+.RecipeHeader {
+    width: 100%;
+    height: 40vh;
+}
+
+.RecipeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.RecipeIntro,
+.RecipeHealth,
+.RecipeIngredients {
+    width: 85%;
+    margin: auto;
+}
+
+.Save {
+    position: relative;
+}
+
+.RecipeSave {
+    position: absolute;
+    right: 0;
+    color: #FAA795;
+}
+
+.RecipeBrief {
+    text-align: justify;
+    margin-top: 2rem;
+}
+
+.HealthText {
+    line-height: 0.5;
+}
+
+.IngredientList {
+    padding: 0;
+    padding-left: 1.8rem;
+    list-style-type: circle;
+}
