@@ -10,6 +10,18 @@ textarea:focus {
     box-shadow: none;
 }
 
+.MainForm::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.MainForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #find {
     background-color: white;
     background-image: url('search.png');
@@ -50,5 +62,13 @@ textarea:focus {
     #find,
     #find::placeholder {
         padding: 0.6rem;
+    }
+
+    #find {
+        background-position: 15px 13px;
+        background-size: 20px 20px;
+        padding: 0.9rem;
+        padding-left: 40px;
+        font-size: 1rem;
     }
 }

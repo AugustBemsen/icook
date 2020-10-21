@@ -3,7 +3,6 @@ import "../../App.css";
 import "./Search.css";
 import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 const Search = (props) => {
@@ -37,7 +36,7 @@ const Search = (props) => {
 
   const fetchRecipe = () => {
     fetch(
-      `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&ap_key=${API_KEY}`
+      `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&app_key=${API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => setResults(data.hits))
@@ -63,7 +62,10 @@ const Search = (props) => {
         icon={faFilter}
       />
       <div className="MainContent">
-        <form className="MainForm" onSubmit={recipeHandler}>
+        <form
+          className="MainForm"
+          onSubmit={recipeHandler}
+        >
           <input
             type="text"
             name="search"
@@ -72,9 +74,6 @@ const Search = (props) => {
             value={words}
             onChange={wordsHandler}
           />
-          <button type="submit">
-            <i class="fa fa-search"></i>
-          </button>
         </form>
         <div className="container">
           {results.map((result, index) => (
