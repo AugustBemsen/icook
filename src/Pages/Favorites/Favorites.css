@@ -1,0 +1,77 @@
+.Favorites {
+    margin-bottom: 5rem;
+}
+
+.FavoritesHero,
+.FavoritesBody {
+    width: 85%;
+    margin: auto;
+}
+
+.FavoritesHeading {
+    font-size: 2rem;
+    width: 80%;
+}
+
+.HeadingDiv {
+    display: flex;
+}
+
+.FavoriteText {
+    width: 49%;
+}
+
+.TotalCounts {
+    text-align: center;
+}
+
+.counts {
+    color: var(--second-color);
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
+.CountsRecipe {
+    line-height: 0;
+}
+
+.RecentSaved {
+    width: 90%;
+    height: 170px;
+    margin: 4rem auto;
+    padding: 1rem;
+    background: var(--second-color);
+    border-radius: 1rem;
+}
+
+.RecentImg {
+    width: 180px;
+    height: 160px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.RecentDiv {
+    float: right;
+    margin-top: 2rem;
+}
+
+.OldSaved {
+    width: 90%;
+    height: 95px;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    background: var(--first-color);
+    border-radius: 1rem;
+}
+
+.OldImg {
+    width: 160px;
+    height: 85px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.OldDiv {
+    float: right;
+}
