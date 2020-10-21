@@ -3,6 +3,7 @@ import "../../App.css";
 import "./Search.css";
 import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 const Search = (props) => {
@@ -22,7 +23,7 @@ const Search = (props) => {
   ];
   // Shorten Words from API
   const truncate = (str) =>
-    str.length > 20 ? str.substring(0, 16) + "..." : str;
+    str.length > 14 ? str.substring(0, 14) + "..." : str;
 
   //  States Managements
   const [results, setResults] = useState([]);
@@ -36,7 +37,7 @@ const Search = (props) => {
 
   const fetchRecipe = () => {
     fetch(
-      `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&app_key=${API_KEY}`
+      `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&ap_key=${API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => setResults(data.hits))
@@ -71,6 +72,9 @@ const Search = (props) => {
             value={words}
             onChange={wordsHandler}
           />
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
         </form>
         <div className="container">
           {results.map((result, index) => (

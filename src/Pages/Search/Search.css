@@ -4,24 +4,33 @@
     margin-top: 1rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     box-shadow: none;
 }
 
 #find {
-    width: 90%;
-    padding: 0.95rem;
+    background-color: white;
+    background-image: url('search.png');
+    background-position: 15px 16px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    width: 80%;
+    padding: 0.9rem;
+    padding-left: 40px;
     margin: auto;
     border: .3px solid black;
     border-radius: 50px;
+    font-size: 1.2rem;
 }
 
 #find::placeholder {
-    padding: 1rem;
+    font-size: 1.2rem;
 }
 
-#find:focus, #find:focus-visible {
+#find:focus,
+#find:focus-visible {
     outline: none;
 }
 
@@ -29,7 +38,7 @@ input:focus, textarea:focus {
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(10rem, 100%)); */
     grid-template-columns: 50% 2fr;
-    margin:  2rem auto;
+    margin: 2rem auto;
     margin-bottom: 4.5rem;
 }
 
@@ -37,7 +46,9 @@ input:focus, textarea:focus {
     .MainContent {
         margin-top: 1.2rem;
     }
-    #find, #find::placeholder {
+
+    #find,
+    #find::placeholder {
         padding: 0.6rem;
     }
 }
