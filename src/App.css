@@ -6,6 +6,32 @@
     --fifth-color: #7ED9BE;
 }
 
+html, body, * {
+    cursor: none;
+}
+
+.customMouse {
+    pointer-events: none;
+    z-index: 10000;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    position: fixed;
+    transition: 0.1s linear
+}
+
+.mouseImg {
+    width: 70px;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
 .WebApp {
     display: none;
 }
@@ -13,6 +39,7 @@
 .WebContainer {
     width: 100%;
     height: 100vh;
+    background-color: azure;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1506224477000-07aa8a76be20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9');
     background-position: center;
     background-repeat: no-repeat;
@@ -38,6 +65,9 @@
 @media screen and (min-width: 800px) {
     .WebApp {
         display: contents;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .MobileApp {

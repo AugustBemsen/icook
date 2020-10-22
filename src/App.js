@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Favorites from "./Pages/Favorites/Favorites";
@@ -7,11 +12,81 @@ import Recipe from "./Pages/Recipe/Recipe";
 import Header from "./Components/Header/Header";
 import Search from "./Pages/Search/Search";
 import NotFound from "./Pages/Home/404/NotFound";
+import Particles from "react-particles-js";
+
+const config = {
+  particles: {
+    number: {
+      value: 100,
+      density: {
+        enable: true,
+        value_area: 1000,
+      },
+    },
+  },
+  opacity: {
+    value: 0.5,
+    anim: {
+      enable: true,
+    },
+  },
+  move: {
+    direction: "right",
+    speed: 0.05,
+  },
+  size: {
+    value: 2,
+    random: true,
+    anim: {
+      enable: true,
+      speed: 3,
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse",
+      },
+      onclick: {
+        enable: true,
+        mode: "push",
+      },
+      resize: true,
+    },
+  },
+  repulse: {
+    distance: 10,
+    duration: 0.01,
+  },
+};
 
 const App = () => {
+  const mouseRef = useRef(null);
+
+  const mouseHandler = () => {
+    document.addEventListener("mousemove", (event) => {
+      const { clientX, clientY } = event;
+      const mouseX = clientX - mouseRef.current.clientWidth / 2;
+      const mouseY = clientY - mouseRef.current.clientHeight / 2;
+      mouseRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    });
+  };
+
+  useEffect( () => mouseHandler(), []);
+
   return (
     <>
       <div className="WebApp">
+        <div className="customMouse" ref={mouseRef}>
+          <img
+            src="https://lh3.googleusercontent.com/proxy/2qtjSjZIk1FO0blv0RGfXwwoKtLSlYVBjlrqOz25Zcg43NeV7rQw5PGnWgyTXHy5l6a0sun8h6FPvChpY9BjHTJ8nGoeealAIT74OZ2s2tBEIA"
+            alt="Mouse"
+            className="mouseImg"
+          />
+        </div>
+        <Particles className="particles" params={config} />
         <div className="WebContainer">
           <div className="WebAppContent">
             <h1 className="WebAppWarning">
