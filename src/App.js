@@ -17,7 +17,7 @@ import Particles from "react-particles-js";
 const config = {
   particles: {
     number: {
-      value: 100,
+      value: 30,
       density: {
         enable: true,
         value_area: 1000,
@@ -35,7 +35,7 @@ const config = {
     speed: 0.05,
   },
   size: {
-    value: 2,
+    value: 7,
     random: true,
     anim: {
       enable: true,
@@ -81,7 +81,7 @@ const App = () => {
       <div className="WebApp">
         <div className="customMouse" ref={mouseRef}>
           <img
-            src="https://lh3.googleusercontent.com/proxy/2qtjSjZIk1FO0blv0RGfXwwoKtLSlYVBjlrqOz25Zcg43NeV7rQw5PGnWgyTXHy5l6a0sun8h6FPvChpY9BjHTJ8nGoeealAIT74OZ2s2tBEIA"
+            src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"
             alt="Mouse"
             className="mouseImg"
           />
