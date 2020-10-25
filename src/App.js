@@ -101,10 +101,11 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/search" component={Search} />
-            <Route path="/recipe" component={Recipe} />
+            {/* <Route path="/recipe" exact component={Recipe} /> */}
+            <Route path="/recipe/:id" exact component={Recipe} />
             <Route path="/favorites" component={Favorites} />
-            <Route path="/404" component={NotFound} />
-            <Redirect to="/404" />
+            {/* <Route path="/404" component={NotFound} />
+            <Redirect to="/404" /> */}
           </Switch>
           <Header />
         </Router>

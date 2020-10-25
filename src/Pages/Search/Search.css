@@ -54,6 +54,11 @@ textarea:focus {
     margin-bottom: 4.5rem;
 }
 
+.CardLink {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 @media screen and (max-width: 345px) {
     .MainContent {
         margin-top: 1.2rem;

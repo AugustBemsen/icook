@@ -1,57 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import "./Recipe.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-const Recipe = () => {
+
+const Recipe = ({ match }) => {
+  const API_KEY = process.env.REACT_APP_Key;
+
+  const [results, setResults] = useState({});
+
+  useEffect(() => {
+    fetchSingleRecipe();
+    console.log(match);
+    // eslint-disable-next-line
+  }, []);
+
+  const fetchSingleRecipe = () => {
+    fetch(
+      // `https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=${API_KEY}&includeNutrition=false`
+      "https://api.spoonacular.com/recipes/648822/information?apiKey=a0043d0896874311b621c762c02bf2fa&includeNutrition=false"
+    )
+      .then((res) => {
+        console.log("res", res);
+        res.json();
+      })
+      .then((data) => {
+        console.log("data", data);
+        setResults(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="Recipe">
       <div className="RecipeHeader">
-        <img
-          className="RecipeImage"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_om8bPxd814bccjOWrgDBqqBbZqlzTXQj7g&usqp=CAU"
-          alt="Pizza"
-        />
+        {/* <img className="RecipeImage" src={results.image} alt="Pizza" /> */}
       </div>
       <div className="RecipeIntro">
         <div className="Save">
-          <h2 className="RecipeTitle">Banana Pizza</h2>
+          {/* <h2 className="RecipeTitle">{results.title}</h2> */}
           <FontAwesomeIcon className="RecipeSave" icon={faHeart} />
         </div>
-        <p className="SmallTitle">Diet Based</p>
-        <p className="RecipeBrief">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti
-          sunt cum at voluptatem reprehenderit ducimus nemo aperiam. Ratione
-          vero sed, tempora quo atque doloremque ducimus nam et minus labore.
-        </p>
+        {/* <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
+        <p className="RecipeBrief">{results.summary}</p> */}
       </div>
       <div className="RecipeHealth">
         <h4 className="SmallHeading">Health and Diet Labels</h4>
-        <p className="HealthText">
-          Calories - <span> 2000</span>
-        </p>
-        <p className="HealthText">
-          Fats - <span> 2000</span>
-        </p>
-        <p className="HealthText">
-          Sugars - <span> 2000</span>
-        </p>
-        <p className="HealthText">
-          Protein - <span> 2000</span>
-        </p>
-        <p className="HealthText">
-          Energy - <span> 2000</span>
-        </p>
+        {/* {results.diets.map((diet) => (
+          <p key={diet} className="HealthText">
+            {diet}
+          </p>
+        ))} */}
       </div>
       <div className="RecipeIngredients">
         <h4 className="SmallHeading">Ingredients</h4>
         <ul className="IngredientList">
-          <li className="lists">Lorem ipsum dolor sit amet.</li>
-          <li className="lists">Lorem ipsum dolor sit amet.</li>
-          <li className="lists">Lorem ipsum dolor sit amet.</li>
-          <li className="lists">Lorem ipsum dolor sit amet.</li>
-          <li className="lists">Lorem ipsum dolor sit amet.</li>
+          {/* {results.extendedIngredients.map((extendedIngredient) => (
+            <li key={extendedIngredient.originalString} className="lists">
+              {extendedIngredient.originalString}
+            </li>
+          ))} */}
         </ul>
+        {/* {results.instructions} */}
       </div>
     </div>
   );
