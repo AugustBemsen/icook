@@ -3,30 +3,25 @@ import "../../App.css";
 import "./Recipe.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import axios from "axios";
 
 const Recipe = ({ match }) => {
   const API_KEY = process.env.REACT_APP_Key;
 
-  const [results, setResults] = useState({});
-
   useEffect(() => {
     fetchSingleRecipe();
-    console.log(match);
     // eslint-disable-next-line
   }, []);
 
-  const fetchSingleRecipe = () => {
-    fetch(
-      // `https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=${API_KEY}&includeNutrition=false`
-      "https://api.spoonacular.com/recipes/648822/information?apiKey=a0043d0896874311b621c762c02bf2fa&includeNutrition=false"
-    )
-      .then((res) => {
-        console.log("res", res);
-        res.json();
-      })
-      .then((data) => {
-        console.log("data", data);
-        setResults(data);
+  const [results, setResults] = useState({});
+
+  const fetchSingleRecipe = async () => {
+    await axios
+      .get(
+        `https://api.spoonacular.com/recipes/${match.params.id}/information?apiKey=${API_KEY}&includeNutrition=false`
+      )
+      .then(async (data) => {
+        await setResults(data.data);
       })
       .catch((err) => console.log(err));
   };
@@ -34,15 +29,15 @@ const Recipe = ({ match }) => {
   return (
     <div className="Recipe">
       <div className="RecipeHeader">
-        {/* <img className="RecipeImage" src={results.image} alt="Pizza" /> */}
+        <img className="RecipeImage" src={results.image} alt="Pizza" />
       </div>
       <div className="RecipeIntro">
         <div className="Save">
-          {/* <h2 className="RecipeTitle">{results.title}</h2> */}
+          <h2 className="RecipeTitle">{results.title}</h2>
           <FontAwesomeIcon className="RecipeSave" icon={faHeart} />
         </div>
-        {/* <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
-        <p className="RecipeBrief">{results.summary}</p> */}
+        <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
+        <p className="RecipeBrief">{results.summary}</p>
       </div>
       <div className="RecipeHealth">
         <h4 className="SmallHeading">Health and Diet Labels</h4>
@@ -61,7 +56,7 @@ const Recipe = ({ match }) => {
             </li>
           ))} */}
         </ul>
-        {/* {results.instructions} */}
+        {results.instructions}
       </div>
     </div>
   );
