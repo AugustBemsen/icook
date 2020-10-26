@@ -26,7 +26,6 @@ const Recipe = ({ match }) => {
       )
       .then(async (data) => {
         await setResults(data.data);
-        console.log(data.data.instructions);
       })
       .catch((err) => console.log(err));
   };
@@ -36,8 +35,8 @@ const Recipe = ({ match }) => {
     const data = {
       image: results.image,
       title: results.title,
+      time: results.readyInMinutes
     };
-    console.log(data);
     favorite.push(data);
     localStorage.setItem("savedRecipe", JSON.stringify(favorite));
     setPreventClick(true);
