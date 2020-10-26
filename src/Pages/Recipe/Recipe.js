@@ -4,16 +4,20 @@ import "./Recipe.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
+import parse from "html-react-parser";
 
 const Recipe = ({ match }) => {
   const API_KEY = process.env.REACT_APP_Key;
 
+  // const truncateSummary = (str, url) =>
+  // str.length > 100 ? `${str.substring(0, 95)} <a href=${url}>Read More</a>`  : str;
   useEffect(() => {
     fetchSingleRecipe();
     // eslint-disable-next-line
   }, []);
 
   const [results, setResults] = useState({});
+  const [preventClick, setPreventClick] = useState(false);
 
   const fetchSingleRecipe = async () => {
     await axios
@@ -22,9 +26,22 @@ const Recipe = ({ match }) => {
       )
       .then(async (data) => {
         await setResults(data.data);
+        console.log(data.data.instructions);
       })
       .catch((err) => console.log(err));
   };
+
+  const saveHandler = () => {
+    const favorite = [];
+    const data = {
+      image : results.image,
+      title : results.title
+    };
+    console.log(data);
+    favorite.push(data);
+    localStorage.setItem("savedRecipe", JSON.stringify(favorite));
+    setPreventClick(true);
+  }
 
   return (
     <div className="Recipe">
@@ -34,29 +51,30 @@ const Recipe = ({ match }) => {
       <div className="RecipeIntro">
         <div className="Save">
           <h2 className="RecipeTitle">{results.title}</h2>
-          <FontAwesomeIcon className="RecipeSave" icon={faHeart} />
+          {!preventClick ? <FontAwesomeIcon className="RecipeSave" icon={faHeart} onClick={saveHandler}/> : "saved!"}
+          
         </div>
         <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
-        <p className="RecipeBrief">{results.summary}</p>
+        <p className="RecipeBrief">{parse(String(results.summary))}</p>
       </div>
       <div className="RecipeHealth">
         <h4 className="SmallHeading">Health and Diet Labels</h4>
-        {/* {results.diets.map((diet) => (
+        {results.diets ? results.diets.map((diet) => (
           <p key={diet} className="HealthText">
             {diet}
           </p>
-        ))} */}
+        )) : "Loading......"}
       </div>
       <div className="RecipeIngredients">
         <h4 className="SmallHeading">Ingredients</h4>
-        <ul className="IngredientList">
-          {/* {results.extendedIngredients.map((extendedIngredient) => (
-            <li key={extendedIngredient.originalString} className="lists">
-              {extendedIngredient.originalString}
-            </li>
-          ))} */}
-        </ul>
-        {results.instructions}
+          <ul className="IngredientList">
+            {results.extendedIngredients ? results.extendedIngredients.map((extendedIngredient) => (
+              <li key={extendedIngredient.originalString} className="lists">
+                {extendedIngredient.originalString}
+              </li>
+            )) : "Loading......"}
+          </ul>
+        <>{parse(String(results.instructions))}</>
       </div>
     </div>
   );

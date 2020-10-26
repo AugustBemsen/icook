@@ -35,6 +35,12 @@
     margin-top: 2rem;
 }
 
+p.RecipeBrief a {
+    text-decoration: underline;
+    color: var(text-color);
+    font-weight: bold;
+}
+
 .HealthText {
     line-height: 0.5;
 }

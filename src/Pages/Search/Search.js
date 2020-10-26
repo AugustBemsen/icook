@@ -79,7 +79,7 @@ const Search = (props) => {
               <Card
                 Image={"https://spoonacular.com/recipeImages/" + result.image}
                 Title={truncate(result.title)}
-                Note={`${result.readyInMinutes}min for ${result.servings} Servings`}
+                Note={`${result.readyInMinutes}Min Cooking`}
                 Color={colors[index]}
               />
             </Link>
