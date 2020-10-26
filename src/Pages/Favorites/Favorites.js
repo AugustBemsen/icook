@@ -29,7 +29,7 @@ const Favorites = () => {
           </p>
           <hr className="Divider" />
           <div className="TotalCounts">
-            <h1 className="counts">12</h1>
+            <h1 className="counts">{results.length}</h1>
             <p className="CountsRecipe">Recipes Saved</p>
           </div>
         </div>
