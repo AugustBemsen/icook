@@ -31,7 +31,7 @@ const Recipe = ({ match }) => {
   };
 
   const saveHandler = () => {
-    const favorite = [];
+    const favorite = JSON.parse(localStorage.getItem("savedRecipe")) || [];
     const data = {
       image: results.image,
       title: results.title,
