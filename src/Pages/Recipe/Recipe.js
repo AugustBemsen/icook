@@ -34,15 +34,14 @@ const Recipe = ({ match }) => {
   const saveHandler = () => {
     const favorite = [];
     const data = {
-      image : results.image,
-      title : results.title
+      image: results.image,
+      title: results.title,
     };
     console.log(data);
     favorite.push(data);
     localStorage.setItem("savedRecipe", JSON.stringify(favorite));
     setPreventClick(true);
-  }
-
+  };
   return (
     <div className="Recipe">
       <div className="RecipeHeader">
@@ -51,29 +50,40 @@ const Recipe = ({ match }) => {
       <div className="RecipeIntro">
         <div className="Save">
           <h2 className="RecipeTitle">{results.title}</h2>
-          {!preventClick ? <FontAwesomeIcon className="RecipeSave" icon={faHeart} onClick={saveHandler}/> : "saved!"}
-          
+          {!preventClick ? (
+            <FontAwesomeIcon
+              className="RecipeSave"
+              icon={faHeart}
+              onClick={saveHandler}
+            />
+          ) : (
+            "saved!"
+          )}
         </div>
         <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
         <p className="RecipeBrief">{parse(String(results.summary))}</p>
       </div>
       <div className="RecipeHealth">
         <h4 className="SmallHeading">Health and Diet Labels</h4>
-        {results.diets ? results.diets.map((diet) => (
-          <p key={diet} className="HealthText">
-            {diet}
-          </p>
-        )) : "Loading......"}
+        {results.diets
+          ? results.diets.map((diet) => (
+              <p key={diet} className="HealthText">
+                {diet}
+              </p>
+            ))
+          : "Loading......"}
       </div>
       <div className="RecipeIngredients">
         <h4 className="SmallHeading">Ingredients</h4>
-          <ul className="IngredientList">
-            {results.extendedIngredients ? results.extendedIngredients.map((extendedIngredient) => (
-              <li key={extendedIngredient.originalString} className="lists">
-                {extendedIngredient.originalString}
-              </li>
-            )) : "Loading......"}
-          </ul>
+        <ul className="IngredientList">
+          {results.extendedIngredients
+            ? results.extendedIngredients.map((extendedIngredient) => (
+                <li key={extendedIngredient.originalString} className="lists">
+                  {extendedIngredient.originalString}
+                </li>
+              ))
+            : "Loading......"}
+        </ul>
         <>{parse(String(results.instructions))}</>
       </div>
     </div>
