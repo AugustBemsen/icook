@@ -45,7 +45,7 @@
 }
 
 .RecentImg {
-    width: 163px;
+    width: 157px;
     height: 165px;
     border-radius: 1rem;
     object-fit: cover;
@@ -90,7 +90,7 @@
 
     .RecentDiv {
         margin-top: 1rem;
-        padding-right: 1.2rem;
+        padding-right: 0.5rem;
     }
 
     .OldSaved {
@@ -103,7 +103,37 @@
     }
 
     .OldDiv {
-        padding-right: 1.2rem;
+        padding-right: 0.5rem;
     }
 
+}
+
+@media screen and (max-width: 310px) {
+
+    .FavoritesHero,
+    .FavoritesBody {
+        width: 90%;
+    }
+
+    .FavoritesHeading {
+        font-size: 1.5rem;
+        width: 85%;
+    }
+
+    .RecentImg {
+        width: 120px;
+    }
+
+    .RecentDiv {
+        margin-top: 1rem;
+        padding-right: 0.2rem;
+    }
+
+    .OldImg {
+        width: 105px;
+    }
+
+    .OldDiv {
+        padding-right: 0.5rem;
+    }
 }
