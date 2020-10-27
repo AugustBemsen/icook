@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
@@ -10,7 +11,8 @@ import Favorites from "./Pages/Favorites/Favorites";
 import Recipe from "./Pages/Recipe/Recipe";
 import Header from "./Components/Header/Header";
 import Search from "./Pages/Search/Search";
-import NotFound from "./Pages/Home/404/NotFound";
+import Profile from "./Pages/Profile/Profile";
+import NotFound from "./Pages/404/NotFound";
 import Particles from "react-particles-js";
 
 const config = {
@@ -73,7 +75,7 @@ const App = () => {
     });
   };
 
-  useEffect( () => mouseHandler(), []);
+  useEffect(() => mouseHandler(), []);
 
   return (
     <>
@@ -100,11 +102,11 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/search" component={Search} />
-            {/* <Route path="/recipe" exact component={Recipe} /> */}
             <Route path="/recipe/:id" component={Recipe} />
             <Route path="/favorites" component={Favorites} />
+            <Route path="/dev" component={Profile} />
             <Route path="/404" component={NotFound} />
-            {/* <Redirect to="/404" /> */}
+            <Redirect to="/404" />
           </Switch>
           <Header />
         </Router>

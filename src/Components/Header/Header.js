@@ -3,10 +3,7 @@ import "../../App.css";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHamburger } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHamburger, faUser, faHeart , faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
   return (
@@ -17,11 +14,11 @@ const Header = (props) => {
       <NavLink className="navLinks" exact to="/search" activeClassName="ActiveSearch">
         <FontAwesomeIcon icon={faSearch} />
       </NavLink>
-      <NavLink className="navLinks" exact to="/recipe" activeClassName="ActiveBook">
-        <FontAwesomeIcon icon={faBookOpen} />
-      </NavLink>
       <NavLink className="navLinks" exact to="/favorites" activeClassName="ActiveFav">
         <FontAwesomeIcon icon={faHeart} />
+      </NavLink>
+      <NavLink className="navLinks" exact to="/dev" activeClassName="ActiveDev">
+        <FontAwesomeIcon icon={faUser} />
       </NavLink>
     </nav>
   );

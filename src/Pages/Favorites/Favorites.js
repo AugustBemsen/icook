@@ -36,7 +36,6 @@ const Favorites = () => {
       {results.length !== 0 ? (
         <div className="FavoritesBody">
           <div className="RecentSaved">
-            {console.log(results[results.length - 1])}
             <img
               src={
                 results[results.length - 1]

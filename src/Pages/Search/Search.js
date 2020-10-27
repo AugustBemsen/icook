@@ -36,12 +36,14 @@ const Search = (props) => {
   }, [recipe]);
 
   const fetchRecipe = () => {
-    fetch(
-      `https://api.spoonacular.com/recipes/search?query=${recipe}&apiKey=${API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((data) => setResults(data.results))
-      .catch((err) => console.log(err));
+    if (recipe !== "") {
+      fetch(
+        `https://api.spoonacular.com/recipes/search?query=${recipe}&apiKey=${API_KEY}`
+      )
+        .then((res) => res.json())
+        .then((data) => setResults(data.results))
+        .catch((err) => console.log(err));
+    }
   };
 
   const wordsHandler = (event) => {
@@ -75,7 +77,11 @@ const Search = (props) => {
         </form>
         <div className="container">
           {results.map((result, index) => (
-            <Link key={result.id} className="CardLink" to={`/recipe/${result.id}`}>
+            <Link
+              key={result.id}
+              className="CardLink"
+              to={`/recipe/${result.id}`}
+            >
               <Card
                 Image={"https://spoonacular.com/recipeImages/" + result.image}
                 Title={truncate(result.title)}
