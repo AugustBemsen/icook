@@ -9,6 +9,7 @@ import "./App.css";
 import Home from "./Pages/Home/Home";
 import Favorites from "./Pages/Favorites/Favorites";
 import Recipe from "./Pages/Recipe/Recipe";
+import Saved from "./Pages/Saved/Saved";
 import Header from "./Components/Header/Header";
 import Search from "./Pages/Search/Search";
 import Profile from "./Pages/Profile/Profile";
@@ -102,7 +103,8 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/search" component={Search} />
-            <Route path="/recipe/:id" component={Recipe} />
+            <Route path="/recipe/:id" exact component={Recipe} />
+            <Route path="/saved/:index" component={Saved} />
             <Route path="/favorites" component={Favorites} />
             <Route path="/dev" component={Profile} />
             <Route path="/404" component={NotFound} />

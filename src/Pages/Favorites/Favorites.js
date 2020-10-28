@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../App.css";
 import "./Favorites.css";
 
@@ -9,8 +10,8 @@ const Favorites = () => {
   const [results, setResults] = useState([]);
 
   const getSavedHandler = () => {
-    const test = JSON.parse(localStorage.getItem("savedRecipe"));
-    setResults(test);
+    const getSaved = JSON.parse(localStorage.getItem("savedRecipe"));
+    setResults(getSaved);
   };
   useEffect(() => {
     getSavedHandler();
@@ -53,21 +54,33 @@ const Favorites = () => {
               </h4>
               <p className="CardDes">
                 {results[results.length - 1]
-                  ? results[results.length - 1].time + "min cooking"
+                  ? results[results.length - 1].readyInMinutes + "min cooking"
                   : null}
               </p>
             </div>
           </div>
-          {results.map((result) => (
-            <div className="OldSavedGroup" key={result.title}>
-              <div className="OldSaved">
-                <img src={result.image} alt="recent saved" className="OldImg" />
-                <div className="OldDiv">
-                  <h4 className="CardTitle">{truncate(result.title)}</h4>
-                  <p className="CardDes">{result.time}min cooking</p>
+          {results.map((result, index) => (
+            <Link
+              key={result.title}
+              className="CardLink"
+              to={`/saved/${index}`}
+            >
+              <div className="OldSavedGroup">
+                <div className="OldSaved">
+                  <img
+                    src={result.image}
+                    alt="recent saved"
+                    className="OldImg"
+                  />
+                  <div className="OldDiv">
+                    <h4 className="CardTitle">{truncate(result.title)}</h4>
+                    <p className="CardDes">
+                      {result.readyInMinutes}min cooking
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       ) : null}
