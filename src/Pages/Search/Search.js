@@ -75,22 +75,38 @@ const Search = (props) => {
             onChange={wordsHandler}
           />
         </form>
-        <div className="container">
-          {results.map((result, index) => (
-            <Link
-              key={result.id}
-              className="CardLink"
-              to={`/recipe/${result.id}`}
-            >
-              <Card
-                Image={"https://spoonacular.com/recipeImages/" + result.image}
-                Title={truncate(result.title)}
-                Note={`${result.readyInMinutes}Min Cooking`}
-                Color={colors[index]}
-              />
-            </Link>
-          ))}
-        </div>
+        {results.length !== 0 ? (
+          <div className="container">
+            {results.map((result, index) => (
+              <Link
+                key={result.id}
+                className="CardLink"
+                to={`/recipe/${result.id}`}
+              >
+                <Card
+                  Image={"https://spoonacular.com/recipeImages/" + result.image}
+                  Title={truncate(result.title)}
+                  Note={`${result.readyInMinutes}Min Cooking`}
+                  Color={colors[index]}
+                />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="EmptySearch">
+            <h2 className="EmptyHeading">Your Search Result will show here</h2>
+            <ul className="IngredientList">
+              <li className="lists">Type Recipe Name</li>
+              <li className="lists">Hit Enter</li>
+              <li className="lists">
+                Be Happy
+                <span role="img" aria-label="smile">
+                  😊
+                </span>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

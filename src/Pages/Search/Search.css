@@ -59,6 +59,16 @@ textarea:focus {
     color: var(--text-color);
 }
 
+.EmptySearch {
+    width: 85%;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 345px) {
     .MainContent {
         margin-top: 1.2rem;

@@ -19,21 +19,21 @@ const Favorites = () => {
   }, []);
   return (
     <div className="Favorites">
-      {results.length !== 0 ? (
-        <div className="FavoritesHero">
-          <h2 className="FavoritesHeading">Saved Recipes</h2>
-          <div className="HeadingDiv">
-            <p className="FavoriteText">
-              Here are some of you Favorites we've saved for you
-            </p>
-            <hr className="Divider" />
-            <div className="TotalCounts">
-              <h1 className="counts">{results.length}</h1>
-              <p className="CountsRecipe">Saved Recipe</p>
-            </div>
+      <div className="FavoritesHero">
+        <h2 className="FavoritesHeading">Saved Recipes</h2>
+        <div className="HeadingDiv">
+          <p className="FavoriteText">
+            Here are some of you Favorites we've saved for you
+          </p>
+          <hr className="Divider" />
+          <div className="TotalCounts">
+            <h1 className="counts">
+              {results.length !== 0 ? results.length : 0}
+            </h1>
+            <p className="CountsRecipe">Saved Recipe</p>
           </div>
         </div>
-      ) : null}
+      </div>
       {results.length !== 0 ? (
         <div className="FavoritesBody">
           <div className="RecentSaved">
@@ -83,7 +83,21 @@ const Favorites = () => {
             </Link>
           ))}
         </div>
-      ) : null}
+      ) : (
+        <div className="EmptySearch">
+          <h2 className="EmptyHeading">Saved Recipes will show here when you save them</h2>
+          <ul className="IngredientList">
+            <li className="lists">Search for a recipe</li>
+            <li className="lists">Save it</li>
+            <li className="lists">
+              View it offline
+              <span role="img" aria-label="smile">
+                😊
+              </span>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
