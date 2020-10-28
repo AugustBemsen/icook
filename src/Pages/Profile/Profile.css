@@ -1,3 +1,59 @@
+.Profile {
+    width: 85%;
+    margin: 1.2rem auto 6rem;
+}
+
+.DevHero {
+    width: 90%;
+    margin: auto;
+}
+
+.MyImg {
+    width: 80%;
+    background: var(--first-color);
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.AboutCard, .SocialLinks {
+    width: 90%;
+    margin: 0 auto 0.5rem;
+    text-align: center;
+}
+
+.MyName, .MyTitle {
+    line-height: 0;
+    padding-top: 0.3rem;
+}
+
+.MySocial {
+    text-decoration: none;
+    color: var(--text-color);
+    padding-left: 0.5rem;
+}
+
+.MySocial:nth-child(1) {
+    padding-left: 0;
+}
+
 .MyIcons {
-    font-size: 3rem;
+    font-size: 1.4rem;
+}
+
+.Contact {
+    padding: 0.35rem 0.8rem;
+    background-color: var(--first-color);
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.AppDetails {
+    margin-top: 2.3rem;
+}
+
+h4.AboutHeading {
+    line-height: 0;
+    color: #7ED9BE
 }

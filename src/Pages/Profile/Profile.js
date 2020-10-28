@@ -12,12 +12,12 @@ const Profile = () => {
   return (
     <div className="Profile">
       <div className="DevHero">
-        <img src={Me} alt="Daniel Bemsen" />
+        <img src={Me} className="MyImg" alt="Daniel Bemsen" />
       </div>
       <div className="AboutCard">
         <div className="AboutMe">
           <h2 className="MyName">Daniel Bemsen</h2>
-          <h6 className="Title">Software Engineer</h6>
+          <h4 className="MyTitle">Software Engineer</h4>
         </div>
         <div className="SocialLinks">
           <a
@@ -50,18 +50,27 @@ const Profile = () => {
         </a>
       </div>
       <div className="AppDetails">
-        <h5 className="AboutHeading">About App</h5>
+        <h4 className="AboutHeading">About App</h4>
         <p className="MeetMe">
           <strong>iCook</strong> is a mobile only web application. Users can
           search for recipes and learn how to cook their favorite meal. The app
           can also save some of your favorite recipes for you, so you can
           revisit them later.
         </p>
-        <h5 className="AboutHeading">About Developer</h5>
+        <h4 className="AboutHeading">About Developer</h4>
         <p className="MeetMe">
-          Hello, <span role="img" aria-label="smile">😊</span> i'm Daniel Bemsen, iCode for fun.
-          I'm Software Developer, build web apps with love.
-          Thats all i have, the rest are recipes, just search 
+          Hello,{" "}
+          <img
+            src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif"
+            alt="Hello"
+            width="23px"
+            height="23px"
+          />{" "}
+          i'm Daniel Bemsen, iCode for fun. I'm Software Developer, build web
+          apps with love. Thats all i have, the rest are recipes, just search{" "}
+          <span role="img" aria-label="smile">
+            😊
+          </span>
         </p>
       </div>
     </div>
