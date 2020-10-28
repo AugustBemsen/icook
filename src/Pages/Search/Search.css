@@ -10,12 +10,6 @@ textarea:focus {
     box-shadow: none;
 }
 
-.MainForm::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .MainForm {
     display: flex;
     align-items: center;

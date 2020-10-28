@@ -2,8 +2,7 @@ import React from "react";
 import "../../App.css";
 import "./Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faHeart, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
@@ -19,26 +18,22 @@ const Home = () => {
             </h1>
             <div className="FontDes">
               <p className="social">
-                <a
+                <Link
                   className="socialLink"
-                  href="https://www.twitter.com/dani_reptor"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="/search"
                 >
-                  <FontAwesomeIcon className="font" icon={faTwitter} />
-                  <span className="iconText">Follow me on Twitter</span>
-                </a>
+                  <FontAwesomeIcon className="font" icon={faSearch} />
+                  <span className="iconText">Search For Recipe</span>
+                </Link>
               </p>
               <p className="social">
-                <a
+                <Link
                   className="socialLink"
-                  href="https://github.com/AugustBemsen/icook"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="/favorites"
                 >
-                  <FontAwesomeIcon className="font" icon={faGithub} />
-                  <span className="iconText">View Source Code</span>
-                </a>
+                  <FontAwesomeIcon className="font" icon={faHeart} />
+                  <span className="iconText">View Saved Recipes</span>
+                </Link>
               </p>
             </div>
             <div className="mainText">
