@@ -10,7 +10,7 @@ const Favorites = () => {
   const [results, setResults] = useState([]);
 
   const getSavedHandler = () => {
-    const getSaved = JSON.parse(localStorage.getItem("savedRecipe"));
+    const getSaved = JSON.parse(localStorage.getItem("savedRecipe")) || [];
     setResults(getSaved);
   };
   useEffect(() => {
@@ -28,20 +28,38 @@ const Favorites = () => {
           <hr className="Divider" />
           <div className="TotalCounts">
             <h1 className="counts">
-              {results.length !== 0 ? results.length : 0}
+              {results.length === 0 || results === undefined
+                ? 0
+                : results.length}
             </h1>
             <p className="CountsRecipe">Saved Recipe</p>
           </div>
         </div>
       </div>
-      {results.length !== 0 ? (
+      {results.length === 0 || results === undefined ? (
+        <div className="EmptySearch">
+          <h2 className="EmptyHeading">
+            Saved Recipes will show here when you save them
+          </h2>
+          <ul className="IngredientList">
+            <li className="lists">Search for a recipe</li>
+            <li className="lists">Save it</li>
+            <li className="lists">
+              View it offline
+              <span role="img" aria-label="smile">
+                😊
+              </span>
+            </li>
+          </ul>
+        </div>
+      ) : (
         <div className="FavoritesBody">
           <div className="RecentSaved">
             <img
               src={
                 results[results.length - 1]
                   ? results[results.length - 1].image
-                  : "https://hips.hearstapps.com/vidthumb/images/delish-u-rice-2-1529079587.jpg"
+                  : null
               }
               alt="recent saved"
               className="RecentImg"
@@ -82,20 +100,6 @@ const Favorites = () => {
               </div>
             </Link>
           ))}
-        </div>
-      ) : (
-        <div className="EmptySearch">
-          <h2 className="EmptyHeading">Saved Recipes will show here when you save them</h2>
-          <ul className="IngredientList">
-            <li className="lists">Search for a recipe</li>
-            <li className="lists">Save it</li>
-            <li className="lists">
-              View it offline
-              <span role="img" aria-label="smile">
-                😊
-              </span>
-            </li>
-          </ul>
         </div>
       )}
     </div>
