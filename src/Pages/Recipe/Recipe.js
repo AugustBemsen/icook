@@ -41,7 +41,7 @@ const Recipe = ({ match }) => {
       summary: results.summary,
       servings: results.servings,
       diets: results.diets,
-      extendedIngredients: results.extendedIngredients
+      extendedIngredients: results.extendedIngredients,
     };
     favorite.push(data);
     localStorage.setItem("savedRecipe", JSON.stringify(favorite));
@@ -68,16 +68,22 @@ const Recipe = ({ match }) => {
         <p className="SmallTitle">{`${results.readyInMinutes} Minutes for ${results.servings} Servings`}</p>
         <p className="RecipeBrief">{parse(String(results.summary))}</p>
       </div>
-      <div className="RecipeHealth">
-        <h4 className="SmallHeading">Health and Diet Labels</h4>
-        {results.diets
-          ? results.diets.map((diet) => (
-              <p key={diet} className="HealthText">
-                {diet}
-              </p>
-            ))
-          : "Loading......"}
-      </div>
+
+      {results.diets ? (
+        <div className="RecipeHealth">
+          {results.diets.length !== 0 ? (
+            <h4 className="SmallHeading">Health and Diet Labels</h4>
+          ) : null}
+          {results.diets.map((diet) => (
+            <p key={diet} className="HealthText">
+              {diet}
+            </p>
+          ))}
+        </div>
+      ) : (
+        "Loading......"
+      )}
+
       <div className="RecipeIngredients">
         <h4 className="SmallHeading">Ingredients</h4>
         <ul className="IngredientList">
