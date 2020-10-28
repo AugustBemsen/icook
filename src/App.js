@@ -102,11 +102,11 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/search" component={Search} />
+            <Route path="/search" exact component={Search} />
             <Route path="/recipe/:id" exact component={Recipe} />
-            <Route path="/saved/:index" component={Saved} />
-            <Route path="/favorites" component={Favorites} />
-            <Route path="/dev" component={Profile} />
+            <Route path="/saved/:index" exact component={Saved} />
+            <Route path="/favorites" exact component={Favorites} />
+            <Route path="/dev" exact component={Profile} />
             <Route path="/404" component={NotFound} />
             <Redirect to="/404" />
           </Switch>

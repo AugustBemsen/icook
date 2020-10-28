@@ -1,9 +1,23 @@
-.NotFound {
-    /* background: url('https://img.freepik.com/free-vector/404-error-page-found-with-donut_114341-54.jpg'); */
-    background: url('https://images.unsplash.com/photo-1531257243018-c547a2e35767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.ImgDiv {
+    width: 95%;
+    margin: auto;
+}
+
+.NFImg {
+    display: block;
     width: 100%;
-    height: 100vh;
-} 
+    margin: auto;
+}
+
+.TextOwn {
+    width: 100px;
+    margin: auto;
+    padding: 0.4rem;
+    background: var(--first-color);
+    text-align: center;
+}
+
+.NotLink {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);;
+}
