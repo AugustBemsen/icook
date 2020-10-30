@@ -76,7 +76,7 @@
     float: right;
 }
 
-@media screen and (max-width: 345px) {
+@media screen and (max-width: 377px) {
 
     .RecentSaved {
         height: 100px;
@@ -135,5 +135,14 @@
 
     .OldDiv {
         padding-right: 0.5rem;
+    }
+}
+
+
+@media screen and (max-width: 277px) {
+
+    .FavoritesHero,
+    .FavoritesBody {
+        width: 97%;
     }
 }
