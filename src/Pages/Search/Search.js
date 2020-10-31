@@ -54,11 +54,14 @@ const Search = (props) => {
     }
   };
 
-  const placeholderHandler = () => {
+  const placeholderFucus = () => {
     setPlaceholder(false);
     if (words === "") {
       setPlaceholder(false);
     }
+  };
+  const placeholderBlur = () => {
+    setPlaceholder(true);
   };
 
   const recipeHandler = (event) => {
@@ -81,7 +84,8 @@ const Search = (props) => {
             type="text"
             name="search"
             id="find"
-            onFocus={placeholderHandler}
+            onFocus={placeholderFucus}
+            onBlur={placeholderBlur}
             placeholder="Search"
             value={words}
             onChange={wordsHandler}
