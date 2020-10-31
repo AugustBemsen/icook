@@ -29,6 +29,7 @@ const Search = (props) => {
   const [results, setResults] = useState([]);
   const [words, setWords] = useState("");
   const [recipe, setRecipe] = useState("");
+  const [placeholder, setPlaceholder] = useState(true);
 
   useEffect(() => {
     fetchRecipe();
@@ -48,6 +49,9 @@ const Search = (props) => {
 
   const wordsHandler = (event) => {
     setWords(event.target.value);
+    if (words === "") {
+      setPlaceholder(false);
+    }
   };
 
   const recipeHandler = (event) => {
@@ -93,7 +97,9 @@ const Search = (props) => {
             ))}
           </div>
         ) : (
-          <div className="EmptySearch">
+          <div
+            className={placeholder ? "EmptySearch Show" : "EmptySearch Hide"}
+          >
             <h2 className="EmptyHeading">Your Search Result will show here</h2>
             <ul className="IngredientList">
               <li className="lists">Type Recipe Name</li>

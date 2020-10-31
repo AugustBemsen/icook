@@ -4,6 +4,14 @@
     margin-top: 1rem;
 }
 
+.Show {
+    display: inherit;
+}
+
+.Hide {
+    display: none;
+}
+
 input:focus,
 textarea:focus {
     outline: none;
