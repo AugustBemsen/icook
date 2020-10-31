@@ -77,6 +77,8 @@ const Search = (props) => {
             placeholder="Search"
             value={words}
             onChange={wordsHandler}
+            autoComplete="off"
+            autoCorrect="off"
           />
         </form>
         {results.length !== 0 ? (
